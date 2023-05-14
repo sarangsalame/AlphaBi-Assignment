@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import Card from './Card';
 import PaginationComponent from './PaginationComponent';
-import { auth, provider } from '../components/firebase.js'
+import { auth, provider } from "../components/firebase";
+import { signInWithPopup, signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import UserImg from '../assets/user.png'
 
@@ -73,16 +74,16 @@ const Home = () => {
 
   // signup fn
 
-  const gooleSignup = () => {
+  function handleLogIn() {
+
     if (!user) {
       const signInWithGoogle = async () => {
-        await auth.signInWithPopup(provider);
+        await signInWithPopup(auth, provider);
       };
       signInWithGoogle();
-    }
-    else {
+    } else {
       const signUserOut = async () => {
-        await auth.signOut(auth);
+        await signOut(auth);
       };
       signUserOut();
     }
@@ -110,7 +111,7 @@ const Home = () => {
         <div>
           <button
             onClick={() => {
-              gooleSignup()
+              handleLogIn()
             }
             }>
             {user ? "SignOut" : "SignUp"}

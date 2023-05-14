@@ -1,30 +1,22 @@
 // Import the functions you need from the SDKs you need
-// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 
-
-
-
-
-import firebase from 'firebase/compat/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore'
-import 'firebase/compat/auth';
 const firebaseConfig = {
-  apiKey: "AIzaSyBmb3wF-Uel3aLPNhVqW8jNK8ZlgrxBE8Q",
-  authDomain: "aplhabiassignement.firebaseapp.com",
-  projectId: "aplhabiassignement",
-  storageBucket: "aplhabiassignement.appspot.com",
-  messagingSenderId: "252052095172",
-  appId: "1:252052095172:web:853e72e62b197271aa8991",
-  measurementId: "G-9E898B2J4H"
+  apiKey: "AIzaSyAo175CSb9ETLwoiDxsFmya9O4WMpnBzHA",
+  authDomain: "alpha-56d52.firebaseapp.com",
+  projectId: "alpha-56d52",
+  storageBucket: "alpha-56d52.appspot.com",
+  messagingSenderId: "757333854686",
+  appId: "1:757333854686:web:0f6b4284de233bad78b54f"
 };
 
-
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
-const auth = firebase.auth();
-const provider = new firebase.auth.GoogleAuthProvider();
+const app = initializeApp(firebaseConfig);
 
 
-export { auth, provider };
+export const auth = getAuth(app);
+export const provider = new GoogleAuthProvider();
+export const database = getFirestore(app);
