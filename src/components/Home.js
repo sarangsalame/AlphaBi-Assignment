@@ -105,7 +105,7 @@ const Home = () => {
           }}
         />
 
-        <button onClick={() => setSeachBtnClicked(true)}>Search</button>
+        <button id="hide_btn" onClick={() => setSeachBtnClicked(true)}>Search</button>
 
         <div>
           <button
