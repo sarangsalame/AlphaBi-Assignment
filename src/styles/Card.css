@@ -1,0 +1,52 @@
+.card {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  width: 300px;
+  height: 350px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+/* .card:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 0.5s ease-in;
+} */
+.card h1 {
+  width: 200px;
+  text-align: left;
+  font-size: 16px;
+}
+.card > p {
+  margin: 0 20px;
+  margin-bottom: 10px;
+  background-color: rgba(248, 216, 216, 0.226);
+}
+
+.card .discription {
+  height: 100px;
+  background-color: rgba(248, 216, 216, 0.226);
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.discription img {
+  width: 30px;
+  height: 30px;
+}
+
+.disc-img_wrapper {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.disc-img_wrapper:hover {
+  background-color: rgba(255, 111, 111, 0.08);
+}
+/* // https://api.giphy.com/v1/gifs/search?q=${res}&api_key=GlVGYHkr3WSBnllca54iNt0yFbjz7L65&limit=5 */

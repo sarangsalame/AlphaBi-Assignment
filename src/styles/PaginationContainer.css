@@ -1,0 +1,30 @@
+.page_toggler {
+  max-width: 100vw;
+  height: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.page_toggler-wrapper {
+  width: 100vw;
+  height: 100px;
+}
+
+.page_list {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.curr_page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(245, 115, 115, 0.144);
+}
+.curr_page:hover {
+  background-color: rgba(250, 58, 58, 0.411);
+}
