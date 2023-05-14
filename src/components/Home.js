@@ -5,7 +5,9 @@ import { auth, provider } from '../components/firebase.js'
 import { useAuthState } from "react-firebase-hooks/auth";
 import UserImg from '../assets/user.png'
 
+
 const Home = () => {
+  const API_KEY = process.env.REACT_APP_API_KEY
   const [user] = useAuthState(auth)
   const [aipdata, setapidata] = useState([]);
   const [resApi, setResApi] = useState([])
@@ -19,7 +21,6 @@ const Home = () => {
 
   //fetching data
   const getApiData = async (search) => {
-
     const handleSearch = (ele) => {
       let searchParam = ele.split(" ").join("+");
       return searchParam;
@@ -28,7 +29,7 @@ const Home = () => {
     let res = handleSearch(search);
 
     const dataa = await fetch(
-      `https://api.giphy.com/v1/gifs/search?q=${res}&api_key=GlVGYHkr3WSBnllca54iNt0yFbjz7L65&limit=50`
+      `https://api.giphy.com/v1/gifs/search?q=${res}&api_key=${API_KEY}&limit=50`
     );
     const json = await dataa.json();
     setapidata(json.data);

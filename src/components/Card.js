@@ -6,7 +6,7 @@ import EmptyStar from '../assets/emptystar.png'
 
 
 const Card = ({ ele, setFavourites, favourites }) => {
-  console.log(ele)
+
   const [gifTtitle, setGifTitile] = useState("")
 
   const [isStarClicked, setIsStarClicked] = useState(false)
