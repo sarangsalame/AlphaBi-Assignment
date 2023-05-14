@@ -5,7 +5,7 @@ import { auth, provider } from "../components/firebase";
 import { signInWithPopup, signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import UserImg from '../assets/user.png'
-
+import loadingGif from '../assets/loadingif.gif'
 
 const Home = () => {
   const [user] = useAuthState(auth)
@@ -16,6 +16,7 @@ const Home = () => {
   const [slic, setSlic] = useState(0)
   const [searchQuery, setSearchQuery] = useState("");
   const [favourites, setFavourites] = useState([])
+
 
 
 
@@ -129,7 +130,7 @@ const Home = () => {
 
 
       <div className='card_wrapper'>
-        {searchQuery === "" ? <div>Search for awesome gifs</div> : null}
+        {searchQuery === "" ? <div className="container"><img src={loadingGif} /> </div> : null}
         {searchQuery.length > 0 && resApi.map((ele) => {
           return (
             <Card key={ele.id} favourites={favourites} setFavourites={setFavourites} ele={ele} />
@@ -137,6 +138,7 @@ const Home = () => {
         })}
       </div>
       {resApi.length > 0 && <PaginationComponent page={page} setCurrPage={setCurrPage} />}
+
     </>
   )
 }

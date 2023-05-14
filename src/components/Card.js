@@ -39,7 +39,9 @@ const Card = ({ ele, setFavourites, favourites }) => {
       <img width="100%" height="250px" src={ele.images.original.url} alt={ele.title} />
       <div className='discription'>
         <h1>{gifTtitle ? gifTtitle : "No Title Avaliable"}</h1>
-        <div className='disc-img_wrapper'><img onClick={() => addToFavourites()} src={isStarClicked ? Star : EmptyStar} alt="star" /></div>
+        <div className='disc-img_wrapper'>
+          <img onClick={() => addToFavourites()} src={isStarClicked ? Star : EmptyStar} alt="star" />
+        </div>
       </div>
       <p>{"@" + ele.username.toLowerCase()}</p>
     </div>
