@@ -2,6 +2,7 @@
 // Import the functions you need from the SDKs you need
 
 import firebase from 'firebase/compat/app';
+import { getFirestore, collection, getDocs } from 'firebase/firestore'
 import 'firebase/compat/auth';
 const firebaseConfig = {
   apiKey: "AIzaSyDrEMb_MTPJvVWheOL25IZCdRq2Cq4WjD4",
@@ -15,9 +16,28 @@ const firebaseConfig = {
 
 
 // Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
 const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
 
-export { app, auth, provider };
+
+// setup database 
+const db = getFirestore()
+
+// collection ref
+const colRef = collection(db, "favouritegifs")
+
+//get collection data
+getDocs(colRef)
+  .then((snapshort) => {
+    let favgif = []
+    snapshort.docs.forEach((doc) => {
+      favgif.push({ ...doc.data(), id: doc.id })
+    })
+    console.log(favgif)
+  }).catch(err => {
+    console.log(err.message)
+  })
+
+export { auth, provider };
