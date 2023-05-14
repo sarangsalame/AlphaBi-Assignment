@@ -72,4 +72,7 @@ button:hover {
   #hide_btn {
     display: none;
   }
+  .card {
+    height: 275px;
+  }
 }
