@@ -69,7 +69,7 @@ button:hover {
   }
 }
 @media screen and (min-width: 400px) {
-  .hide_btn {
+  #hide_btn {
     display: block;
   }
 }
