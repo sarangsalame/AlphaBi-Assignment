@@ -68,8 +68,8 @@ button:hover {
     width: 400px;
   }
 }
-@media screen and (min-width: 400px) {
+@media screen and (max-width: 400px) {
   #hide_btn {
-    display: block;
+    display: none;
   }
 }
