@@ -75,7 +75,7 @@ const Home = () => {
 
   // signup fn
 
-  function handleLogIn() {
+  function googleSignup() {
 
     if (!user) {
       const signInWithGoogle = async () => {
@@ -112,7 +112,7 @@ const Home = () => {
         <div>
           <button
             onClick={() => {
-              handleLogIn()
+              googleSignup()
             }
             }>
             {user ? "SignOut" : "SignUp"}
